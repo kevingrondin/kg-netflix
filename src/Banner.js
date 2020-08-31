@@ -6,21 +6,18 @@ import "./Banner.css";
 const Banner = () => {
   const [movie, setMovie] = useState([]);
 
-  const fetchData = async () => {
-    const request = await axios.get(requests.fetchNetflixOriginals);
-    setMovie(
-      request.data.results[
-        Math.floor(Math.random() * request.data.results.length - 1)
-      ]
-    );
-    return request;
-  };
-
   useEffect(() => {
+    async function fetchData() {
+      const request = await axios.get(requests.fetchNetflixOriginals);
+      setMovie(
+        request.data.results[
+          Math.floor(Math.random() * request.data.results.length - 1)
+        ]
+      );
+      return request;
+    }
     fetchData();
   }, []);
-
-  console.log(movie);
 
   return (
     <header
