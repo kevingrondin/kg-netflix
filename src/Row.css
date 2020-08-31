@@ -1,0 +1,39 @@
+.row__posters {
+  display: flex;
+  /* la barre du scrolle des y caché */
+  overflow-y: hidden;
+  /* l'élément devient scrollable sur l'axe des x et non la page entière */
+  overflow-x: scroll;
+  /* rajoute de l'espace sur les 4 coté */
+  padding: 20px;
+}
+
+/* n'affiche pas le scroll mais garde la fonctionnalité */
+.row__posters::-webkit-scrollbar {
+  display: none;
+}
+
+.row__poster {
+  /* image est ajusté peu importe la dimnensions*/
+  object-fit: contain;
+  width: 100%;
+  max-height: 100px;
+  /* mettre un espace à droite de chaque image */
+  margin-right: 10px;
+  /* rajout un delais sur chaque changement de taille */
+  transition: transform 450ms;
+}
+
+.row__poster:hover {
+  /* augmente 1.08 la taille de l'image */
+  transform: scale(1.08);
+}
+
+.row__posterLarge {
+  max-height: 250px;
+}
+
+.row__posterLarge:hover {
+  /* augmente 1.08 la taille de l'image */
+  transform: scale(1.09);
+}

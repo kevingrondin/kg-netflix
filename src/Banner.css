@@ -1,0 +1,19 @@
+/* couleur, disposition de l'image, et grandeur */
+.banner {
+  color: white;
+  object-fit: contain;
+  height: 448px;
+}
+
+/* marge à gauche, marhe en haut, grandeur */
+.banner__contents {
+  margin-left: 30px;
+  padding-top: 140px;
+  height: 190px;
+}
+
+.banner__title {
+  font-size: 3rem;
+  font-weight: 800;
+  padding-bottom: 0.3rem;
+}
