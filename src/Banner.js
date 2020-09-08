@@ -3,7 +3,9 @@ import axios from "./axios";
 import requests from "./requests";
 import "./Banner.css";
 
-const Banner = () => {
+const posterBaseUrl = "http://image.tmdb.org/t/p/original";
+
+function Banner() {
   const [movie, setMovie] = useState([]);
 
   useEffect(() => {
@@ -29,7 +31,7 @@ const Banner = () => {
       style={{
         backgroundSize: "cover",
         backgroundImage: `url(
-          "https://image.tmdb.org/t/p/original/${movie?.backdrop_path}"
+          "${posterBaseUrl}${movie?.backdrop_path}"
         )`,
         backgroundPosition: "center center",
       }}
@@ -51,6 +53,6 @@ const Banner = () => {
       <div className="banner--fadeBottom" />
     </header>
   );
-};
+}
 
 export default Banner;
